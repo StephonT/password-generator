@@ -134,10 +134,44 @@ function generatePassword() {
   }
 
   //Choose Character Type
-  var passwordCharacter = prompt(
+  var characterType = prompt(
     "Select the characters you would like to include in your password. For lowercase letters, type 'lowercase'. For uppercase letters, type 'uppercase'. For numbers, type 'numbers'. For special characters, type 'special characters'. For mix of all characters, type 'All'."
   );
-}
+  if (characterType === null) {
+    return;
+  }
+
+  // Create a final password empty array
+  var finalPassword = [];
+
+  //Create if statements to ensure the selected types are of the values: lowercase, uppercase, numeric and/or special characters
+  //Create for loops to generate random password
+  if (characterType.toLowerCase() === "lowercase") {
+    for (i = 0; i < setPasswordLength; i++) {
+      finalPassword.push(
+        alphabetLow[Math.floor(Math.random() * alphabetLow.length)]
+      );
+    }
+
+    console.log("The user password is: " + finalPassword.join(""));
+    alert(
+      "Your password will be displayed inside of the box. Please save it for your records."
+    );
+    return finalPassword.join("");
+  } else if (characterType.toUpperCase() === "uppercase") {
+    for (i = 0; i < setPasswordLength; i++) {
+      finalPassword.push(
+        alphabetUpper[Math.floor(Math.random() * alphabetUpper.length)]
+      );
+    }
+  } else if (characterType.toLowerCase() === "lowercase") {
+    for (i = 0; i < setPasswordLength; i++) {
+      finalPassword.push(
+        alphabetLow[Math.floor(Math.random() * alphabetLow.length)]
+      );
+    }
+  }
+} //End of generateButton Function
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
