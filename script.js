@@ -106,7 +106,7 @@ var allCharacters = alphabetUpper.concat(
   numerals,
   specialCharacters
 );
-console.log(allCharacters);
+//console.log(allCharacters);
 
 //Generate Button Function
 function generatePassword() {
@@ -135,7 +135,7 @@ function generatePassword() {
 
   //Choose Character Type
   var characterType = prompt(
-    "Select the characters you would like to include in your password. For lowercase letters, type 'lowercase'. For uppercase letters, type 'uppercase'. For numbers, type 'numbers'. For special characters, type 'special characters'. For mix of all characters, type 'All'."
+    "Select the characters you would like to include in your password. For lowercase letters, type 'lowercase'. For uppercase letters, type 'uppercase'. For numbers, type 'numbers'. For special characters, type 'special characters'. For mix of all characters, type 'all'."
   );
   if (characterType === null) {
     return;
@@ -146,6 +146,8 @@ function generatePassword() {
 
   //Create if statements to ensure the selected types are of the values: lowercase, uppercase, numeric and/or special characters
   //Create for loops to generate random password
+
+  //Lowercase For Loop
   if (characterType.toLowerCase() === "lowercase") {
     for (i = 0; i < setPasswordLength; i++) {
       finalPassword.push(
@@ -158,18 +160,61 @@ function generatePassword() {
       "Your password will be displayed inside of the box. Please save it for your records."
     );
     return finalPassword.join("");
-  } else if (characterType.toUpperCase() === "uppercase") {
+
+    // Uppercase For Loop
+  } else if (characterType.toLowerCase() === "uppercase") {
     for (i = 0; i < setPasswordLength; i++) {
       finalPassword.push(
         alphabetUpper[Math.floor(Math.random() * alphabetUpper.length)]
       );
     }
-  } else if (characterType.toLowerCase() === "lowercase") {
+    console.log("The user password is: " + finalPassword.join(""));
+    alert(
+      "Your password will be displayed inside of the box. Please save it for your records."
+    );
+    return finalPassword.join("");
+
+    // Numbers For Loop
+  } else if (characterType.toLowerCase() === "numbers") {
+    for (i = 0; i < setPasswordLength; i++) {
+      finalPassword.push(numerals[Math.floor(Math.random() * numerals.length)]);
+    }
+    console.log("The user password is: " + finalPassword.join(""));
+    alert(
+      "Your password will be displayed inside of the box. Please save it for your records."
+    );
+    return finalPassword.join("");
+
+    // Special Characters For Loop
+  } else if (characterType.toLowerCase() === "special characters") {
     for (i = 0; i < setPasswordLength; i++) {
       finalPassword.push(
-        alphabetLow[Math.floor(Math.random() * alphabetLow.length)]
+        specialCharacters[Math.floor(Math.random() * specialCharacters.length)]
       );
     }
+    console.log("The user password is: " + finalPassword.join(""));
+    alert(
+      "Your password will be displayed inside of the box. Please save it for your records."
+    );
+    return finalPassword.join("");
+
+    //All Characters For Loop
+  } else if (characterType.toLowerCase() === "all") {
+    var allCharacters = alphabetUpper.concat(
+      alphabetLow,
+      numerals,
+      specialCharacters
+    );
+    for (i = 0; i < setPasswordLength; i++) {
+      finalPassword.push(
+        allCharacters[Math.floor(Math.random() * allCharacters.length)]
+      );
+    }
+    console.log("The user password is: " + finalPassword.join(""));
+    alert(
+      "Your password will be displayed inside of the box. Please save it for your records."
+    );
+    return finalPassword.join("");
   }
 } //End of generateButton Function
 
