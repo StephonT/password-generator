@@ -127,10 +127,12 @@ function generatePassword() {
     alert(
       "You did not choose a number between 8 and 128. Press 'Generate Password' button to restart. Thank you!"
     );
+    return;
   } else if (lengthAsNumber !== NaN) {
     alert(
       "You did not choose a number. Press 'Generate Password' button to restart. Thank you! "
     );
+    return;
   }
 
   //Choose Character Type
@@ -215,6 +217,8 @@ function generatePassword() {
       "Your password will be displayed inside of the box. Please save it for your records."
     );
     return finalPassword.join("");
+  } else {
+    alert("You did not choose a valid option");
   }
 } //End of generateButton Function
 
