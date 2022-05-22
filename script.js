@@ -127,9 +127,16 @@ function generatePassword() {
     alert(
       "You did not choose a number between 8 and 128. Press 'Generate Password' button to restart. Thank you!"
     );
+  } else if (lengthAsNumber !== NaN) {
+    alert(
+      "You did not choose a number. Press 'Generate Password' button to restart. Thank you! "
+    );
   }
 
   //Choose Character Type
+  var passwordCharacter = prompt(
+    "Select the characters you would like to include in your password. For lowercase letters, type 'lowercase'. For uppercase letters, type 'uppercase'. For numbers, type 'numbers'. For special characters, type 'special characters'. For mix of all characters, type 'All'."
+  );
 }
 
 // Get references to the #generate element
