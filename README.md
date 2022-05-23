@@ -8,4 +8,9 @@ Starter code such as HTML, CSS, and some Javascript was provided by the Rutgers 
 
 ## Website URL
 
+
+
 ## Screenshot
+
+<img width="1437" alt="passwordGen-SS" src="https://user-images.githubusercontent.com/104699408/169746887-b4dcbea6-6331-40b3-b8e4-97163251cabc.png">
+
