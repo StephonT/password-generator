@@ -3,8 +3,8 @@
 # Purpose
 
 The purpose of this project is to generate a random password based off of a set characters that a user is prompted to choose from. These characters include lowercase and uppercase letters, numbers, special characters, and/or all characters. <br>
-Once the user presses the "Generate Password" button, a series of prompts begin to guide the user in generating their random characterized password. The first prompt is asking the user to choose a number between 8 and 128. Once the user chooses the number between 8 and 128, another prompt appears and asks the user to choose which set of characters they would like for their password to be made up of. Once the user chooses the character, a password is generated for the user.<br>
-Starter code such as HTML, CSS, and some Javascript was provided by the Rutgers University Bootcamp, however, I had to provide Javascript code in order to get the password to generate a randomized password.
+Once the user presses the "Generate Password" button, a series of prompts begin to guide the user in generating their random characterized password. The first prompt is asking the user to enter a number between 8 and 128. Once the user chooses the number between 8 and 128, a series of prompts asks the user if they would like lowercase, uppercase, numbers, or special characters generated in their password. They have the option to include whichever character they desire. <br>
+Starter code such as HTML, CSS, and some Javascript was provided by the Rutgers University Bootcamp, however, I had to write Javascript code in order to get the password to generate once the button was pressed. Please see the link below to test out my Password Generator.
 
 ## Website URL
 https://stephont.github.io/password-generator/
