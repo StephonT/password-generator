@@ -25,6 +25,10 @@ function writePassword() {
   var passwordLength = prompt(
     "Please enter a number between 8 and 128 for your desired password length."
   );
+
+  if (passwordLength >= 8 && passwordLength <= 128) {
+    confirm(`You have chosen the password length of ${passwordLength}.`);
+  }
   while (passwordLength < 8 || passwordLength > 128 || passwordLength === NaN) {
     passwordLength = prompt(
       "Please enter a number between 8 and 128 for your desired password length."
