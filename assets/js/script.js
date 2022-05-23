@@ -1,6 +1,6 @@
 // Assignment code here
 function generatePassword(passwordLength, charsSet) {
-  // For Loop to finally generate random password
+  // For Loop to generate password
   var password = "";
 
   for (let i = 0; i < passwordLength; i++) {
@@ -10,13 +10,17 @@ function generatePassword(passwordLength, charsSet) {
   }
 
   return password; // return value
-}
+} // End of For Loop
+//
+//
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
+  //
+  //
   // Defining How Many Characters User Wants In Generated Password
   var passwordLength = prompt(
     "Please enter a number between 8 and 128 for your desired password length."
@@ -24,9 +28,10 @@ function writePassword() {
   while (passwordLength < 8 || passwordLength > 128 || passwordLength === NaN) {
     passwordLength = prompt(
       "Please enter a number between 8 and 128 for your desired password length."
-    );
+    ); //While Loop that does not allow the user to continue unless statement is true.
   }
-  //console.log(passwordLength); // To see Password Length in Log
+  //
+  //
 
   //Characters to be inputed into generate password
   lowerCaseChars = "abcdefghijklmnopqrstuvwxyz";
@@ -37,7 +42,9 @@ function writePassword() {
 
   specialChars = "~!%^&*()+=@#$";
 
-  charsSet = ""; //Characters chosen during character select prompt
+  charsSet = ""; //<==== Empty string so chosen characters by user can be written in it.
+  //
+  //
 
   // Confirming what characters to include in password
   if (confirm("Would you like lowercase letters?")) {
