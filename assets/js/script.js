@@ -1,7 +1,8 @@
 // Assignment code here
 
-// Lowercase Letters Array
-var alphabetLow = [
+// Characters to be used to generate password
+
+var lowerCaseChars = [
   "a",
   "b",
   "c",
@@ -30,8 +31,7 @@ var alphabetLow = [
   "z",
 ];
 
-// Uppercase Letters Array
-var alphabetUpper = [
+var upperCaseChars = [
   "A",
   "B",
   "C",
@@ -60,8 +60,7 @@ var alphabetUpper = [
   "Z",
 ];
 
-// Special Characters Array
-var specialCharacters = [
+var specialChars = [
   "\u0020",
   "\u0021",
   "\u0022",
@@ -98,15 +97,13 @@ var specialCharacters = [
   "\u007E",
 ];
 
-// Number Array
-var numerals = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+var numberChars = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-// Define ALL characters
-var allCharacters = alphabetUpper.concat(
-  alphabetLow,
-  numerals,
-  specialCharacters
-);
+// var allChars = alphabetUpper.concat(
+//   alphabetLow,
+//   numerals,
+//   specialCharacters
+// );
 
 //Start of Generate Button Function
 function generatePassword() {
