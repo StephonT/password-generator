@@ -7,20 +7,16 @@ function generatePassword(passwordLength, charsSet) {
     var charIndex = Math.floor(Math.random() * charsSet.length);
 
     password += charsSet.charAt(charIndex);
-  }
+  } //End of For Loop
 
   return password; // return value
-} // End of For Loop
-//
-//
+} // End of Generate Password Function
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  //
-  //
   // Defining How Many Characters User Wants In Generated Password
   var passwordLength = prompt(
     "Please enter a number between 8 and 128 for your desired password length."
@@ -34,8 +30,6 @@ function writePassword() {
       "Please enter a number between 8 and 128 for your desired password length."
     ); //While Loop that does not allow the user to continue unless statement is true.
   }
-  //
-  //
 
   //Characters to be inputed into generate password
   lowerCaseChars = "abcdefghijklmnopqrstuvwxyz";
@@ -47,8 +41,6 @@ function writePassword() {
   specialChars = "~!%^&*()+=@#$";
 
   charsSet = ""; //<==== Empty string so chosen characters by user can be written in it.
-  //
-  //
 
   // Confirming what characters to include in password
   if (confirm("Would you like lowercase letters?")) {
