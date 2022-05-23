@@ -7,10 +7,9 @@ Once the user presses the "Generate Password" button, a series of prompts begin 
 Starter code such as HTML, CSS, and some Javascript was provided by the Rutgers University Bootcamp, however, I had to write Javascript code in order to get the password to generate once the button was pressed. Please click the link below to use my Password Generator.
 
 ## Website URL
-https://stephont.github.io/password-generator/
 
+<a href=https://stephont.github.io/password-generator/ alt= "Password generator website">Password Generator</a>
 
 ## Screenshot
 
 <img width="1437" alt="passwordGen-SS" src="https://user-images.githubusercontent.com/104699408/169746887-b4dcbea6-6331-40b3-b8e4-97163251cabc.png">
-
