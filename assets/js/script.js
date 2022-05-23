@@ -99,15 +99,11 @@ var specialChars = [
 
 var numberChars = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-// var allChars = alphabetUpper.concat(
-//   alphabetLow,
-//   numerals,
-//   specialCharacters
-// );
+var allChars = upperCaseChars.concat(lowerCaseChars, numberChars, specialChars);
 
 //Start of Generate Button Function
 function generatePassword() {
-  //Set Password Length and prompt
+  //Set Password Length Prompt
   var setPasswordLength = prompt(
     "Please choose a number between 8 and 128 for your desired password length."
   );
@@ -125,96 +121,111 @@ function generatePassword() {
       "You did not choose a number between 8 and 128. Press 'Generate Password' button to try again."
     );
 
-    return;
-  } else if (lengthAsNumber !== NaN) {
-    alert(
-      "You did not choose a number. Press 'Generate Password' button to try again. "
-    );
-    return;
+    //   return;
+    // } else if (lengthAsNumber !== NaN) {
+    //   alert(
+    //     "You did not choose a number. Press 'Generate Password' button to try again. "
+    //   );
+    //   return;
   }
 
   //Choose Character Type
-  var characterType = prompt(
-    "Choose characters for your password. For lowercase letters, type 'lowercase'. For uppercase letters, type 'uppercase'. For numbers, type 'numbers'. For special characters, type 'special'. For mix of all characters, type 'all'."
-  );
-  if (characterType === null) {
-    return;
+  var characterType = "";
+
+  //questions prompted to ask user which characters to include in their password
+
+  if (confirm("Would you like lowercase characters?")) {
+    characterType += lowerCaseChars;
+  }
+
+  if (confirm("Would you like uppercase characters?")) {
+    characterType += upperCaseChars;
+  }
+
+  if (confirm("Would you like number characters?")) {
+    characterType += numberChars;
+  }
+
+  if (confirm("Would you like special characters?")) {
+    characterType += specialChars;
   }
 
   // Create a final password empty array
   var finalPassword = [];
 
   //Lowercase "For" Loop
-  if (characterType.toLowerCase() === "lowercase") {
-    for (i = 0; i < setPasswordLength; i++) {
-      finalPassword.push(
-        alphabetLow[Math.floor(Math.random() * alphabetLow.length)]
-      );
-    }
+  // if (characterType.toLowerCase() === "lowercase") {
+  //   for (i = 0; i < setPasswordLength; i++) {
+  //     finalPassword.push(
+  //       lowerCaseChars[Math.floor(Math.random() * lowerCaseChars.length)]
+  //     );
+  //   }
 
-    console.log("The user password is: " + finalPassword.join(""));
-    alert(
-      "You've chosen lowercase! Your password will be displayed inside of the box. Please save it for your records."
-    );
-    return finalPassword.join("");
+  //   console.log("The user password is: " + finalPassword.join(""));
+  //   alert(
+  //     "You've chosen lowercase! Your password will be displayed inside of the box. Please save it for your records."
+  //   );
+  //   return finalPassword.join("");
 
-    // Uppercase "For" Loop
-  } else if (characterType.toLowerCase() === "uppercase") {
-    for (i = 0; i < setPasswordLength; i++) {
-      finalPassword.push(
-        alphabetUpper[Math.floor(Math.random() * alphabetUpper.length)]
-      );
-    }
-    console.log("The user password is: " + finalPassword.join(""));
-    alert(
-      "You've chosen uppercase! Your password will be displayed inside of the box. Please save it for your records."
-    );
-    return finalPassword.join("");
+  //   // Uppercase "For" Loop
+  // } else if (characterType.toLowerCase() === "uppercase") {
+  //   for (i = 0; i < setPasswordLength; i++) {
+  //     finalPassword.push(
+  //       upperCaseChars[Math.floor(Math.random() * upperCaseChars.length)]
+  //     );
+  //   }
+  //   console.log("The user password is: " + finalPassword.join(""));
+  //   alert(
+  //     "You've chosen uppercase! Your password will be displayed inside of the box. Please save it for your records."
+  //   );
+  //   return finalPassword.join("");
 
-    // Numbers "For" Loop
-  } else if (characterType.toLowerCase() === "numbers") {
-    for (i = 0; i < setPasswordLength; i++) {
-      finalPassword.push(numerals[Math.floor(Math.random() * numerals.length)]);
-    }
-    console.log("The user password is: " + finalPassword.join(""));
-    alert(
-      "You've chosen numbers! Your password will be displayed inside of the box. Please save it for your records."
-    );
-    return finalPassword.join("");
+  //   // Numbers "For" Loop
+  // } else if (characterType.toLowerCase() === "numbers") {
+  //   for (i = 0; i < setPasswordLength; i++) {
+  //     finalPassword.push(
+  //       numberChars[Math.floor(Math.random() * numberChars.length)]
+  //     );
+  //   }
+  //   console.log("The user password is: " + finalPassword.join(""));
+  //   alert(
+  //     "You've chosen numbers! Your password will be displayed inside of the box. Please save it for your records."
+  //   );
+  //   return finalPassword.join("");
 
-    // Special Characters "For" Loop
-  } else if (characterType.toLowerCase() === "special") {
-    for (i = 0; i < setPasswordLength; i++) {
-      finalPassword.push(
-        specialCharacters[Math.floor(Math.random() * specialCharacters.length)]
-      );
-    }
-    console.log("The user password is: " + finalPassword.join(""));
-    alert(
-      "You've chosen special characters! Your password will be displayed inside of the box. Please save it for your records."
-    );
-    return finalPassword.join("");
+  //   // Special Characters "For" Loop
+  // } else if (characterType.toLowerCase() === "special") {
+  //   for (i = 0; i < setPasswordLength; i++) {
+  //     finalPassword.push(
+  //       specialChars[Math.floor(Math.random() * specialChars.length)]
+  //     );
+  //   }
+  //   console.log("The user password is: " + finalPassword.join(""));
+  //   alert(
+  //     "You've chosen special characters! Your password will be displayed inside of the box. Please save it for your records."
+  //   );
+  //   return finalPassword.join("");
 
-    //All Characters "For" Loop
-  } else if (characterType.toLowerCase() === "all") {
-    var allCharacters = alphabetUpper.concat(
-      alphabetLow,
-      numerals,
-      specialCharacters
-    );
-    for (i = 0; i < setPasswordLength; i++) {
-      finalPassword.push(
-        allCharacters[Math.floor(Math.random() * allCharacters.length)]
-      );
-    }
-    console.log("The user password is: " + finalPassword.join(""));
-    alert(
-      "You've chosen all characters! Your password will be displayed inside of the box. Please save it for your records."
-    );
-    return finalPassword.join("");
-  } else {
-    alert("You did not choose a valid option");
-  }
+  //   //All Characters "For" Loop
+  // } else if (characterType.toLowerCase() === "all") {
+  //   var allCharacters = upperCaseChars.concat(
+  //     lowerCaseChars,
+  //     numberChars,
+  //     specialChars
+  //   );
+  //   for (i = 0; i < setPasswordLength; i++) {
+  //     finalPassword.push(
+  //       allCharacters[Math.floor(Math.random() * allCharacters.length)]
+  //     );
+  //   }
+  //   console.log("The user password is: " + finalPassword.join(""));
+  //   alert(
+  //     "You've chosen all characters! Your password will be displayed inside of the box. Please save it for your records."
+  //   );
+  //   return finalPassword.join("");
+  // } else {
+  //   alert("You did not choose a valid option");
+  // }
 }
 
 // Get references to the #generate element
