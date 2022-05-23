@@ -121,7 +121,7 @@ function generatePassword() {
   console.log(lengthAsNumber);
 
   //Create conditional statement for password length
-  if (lengthAsNumber > 8 && lengthAsNumber < 128) {
+  if (lengthAsNumber >= 8 && lengthAsNumber <= 128) {
     confirm("You have selected a character length of " + lengthAsNumber + ".");
   } else if (lengthAsNumber <= 8 || lengthAsNumber >= 128) {
     alert(
@@ -137,7 +137,7 @@ function generatePassword() {
 
   //Choose Character Type
   var characterType = prompt(
-    "Select the characters you would like to include in your password. For lowercase letters, type 'lowercase'. For uppercase letters, type 'uppercase'. For numbers, type 'numbers'. For special characters, type 'special characters'. For mix of all characters, type 'all'."
+    "Choose characters for your password. For lowercase letters, type 'lowercase'. For uppercase letters, type 'uppercase'. For numbers, type 'numbers'. For special characters, type 'special'. For mix of all characters, type 'all'."
   );
   if (characterType === null) {
     return;
@@ -159,7 +159,7 @@ function generatePassword() {
 
     console.log("The user password is: " + finalPassword.join(""));
     alert(
-      "Your password will be displayed inside of the box. Please save it for your records."
+      "You've chosen lowercase! Your password will be displayed inside of the box. Please save it for your records."
     );
     return finalPassword.join("");
 
@@ -172,7 +172,7 @@ function generatePassword() {
     }
     console.log("The user password is: " + finalPassword.join(""));
     alert(
-      "Your password will be displayed inside of the box. Please save it for your records."
+      "You've chosen uppercase! Your password will be displayed inside of the box. Please save it for your records."
     );
     return finalPassword.join("");
 
@@ -183,12 +183,12 @@ function generatePassword() {
     }
     console.log("The user password is: " + finalPassword.join(""));
     alert(
-      "Your password will be displayed inside of the box. Please save it for your records."
+      "You've chosen numbers! Your password will be displayed inside of the box. Please save it for your records."
     );
     return finalPassword.join("");
 
     // Special Characters For Loop
-  } else if (characterType.toLowerCase() === "special characters") {
+  } else if (characterType.toLowerCase() === "special") {
     for (i = 0; i < setPasswordLength; i++) {
       finalPassword.push(
         specialCharacters[Math.floor(Math.random() * specialCharacters.length)]
@@ -196,7 +196,7 @@ function generatePassword() {
     }
     console.log("The user password is: " + finalPassword.join(""));
     alert(
-      "Your password will be displayed inside of the box. Please save it for your records."
+      "You've chosen special characters! Your password will be displayed inside of the box. Please save it for your records."
     );
     return finalPassword.join("");
 
@@ -214,7 +214,7 @@ function generatePassword() {
     }
     console.log("The user password is: " + finalPassword.join(""));
     alert(
-      "Your password will be displayed inside of the box. Please save it for your records."
+      "You've chosen all characters! Your password will be displayed inside of the box. Please save it for your records."
     );
     return finalPassword.join("");
   } else {
