@@ -7,7 +7,7 @@ Once the user presses the "Generate Password" button, a series of prompts begin 
 Starter code such as HTML, CSS, and some Javascript was provided by the Rutgers University Bootcamp, however, I had to provide Javascript code in order to get the password to generate a randomized password.
 
 ## Website URL
-
+https://stephont.github.io/password-generator/
 
 
 ## Screenshot
