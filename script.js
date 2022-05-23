@@ -106,7 +106,8 @@ var allCharacters = alphabetUpper.concat(
   numerals,
   specialCharacters
 );
-//console.log(allCharacters);
+
+let userInputIsValid = false;
 
 //Generate Button Function
 function generatePassword() {
@@ -124,14 +125,12 @@ function generatePassword() {
   if (lengthAsNumber >= 8 && lengthAsNumber <= 128) {
     confirm("You have selected a character length of " + lengthAsNumber + ".");
   } else if (lengthAsNumber <= 8 || lengthAsNumber >= 128) {
-    alert(
-      "You did not choose a number between 8 and 128. Press 'Generate Password' button to restart. Thank you!"
-    );
+    alert("You did not choose a number between 8 and 128. Please try again.");
+    generatePassword();
     return;
   } else if (lengthAsNumber !== NaN) {
-    alert(
-      "You did not choose a number. Press 'Generate Password' button to restart. Thank you! "
-    );
+    alert("You did not choose a number. Please try again. ");
+    generatePassword();
     return;
   }
 
