@@ -91,6 +91,8 @@ specialChars =
   "\u007D",
   "\u007E");
 
+charsSet = ""; //Characters chosen during character select prompt
+
 // Assignment code here
 function generatePassword() {
   // Defining How Many Characters User Wants In Generated Password
@@ -105,9 +107,27 @@ function generatePassword() {
     passwordLength === NaN
   ) {
     alert("You did not enter a valid number. Please try again.");
-    generatePassword();
+    generatePassword(); // recursive function
   }
   //console.log(passwordLength); // To see Password Length in Log
+
+  // Confirming what characters to include in password
+  if (confirm("Would you like lowercase letters?")) {
+    charsSet += lowerCaseChars; //append the charSet
+  }
+
+  if (confirm("Would you like uppercase letters?")) {
+    charsSet += upperCaseChars; //append the charSet
+  }
+
+  if (confirm("Would you like numbers?")) {
+    charsSet += numberChars; //append the charSet
+  }
+
+  if (confirm("Would you like special characters?")) {
+    charsSet += specialChars; //append the charSet
+  }
+  return;
 }
 
 // Get references to the #generate element
