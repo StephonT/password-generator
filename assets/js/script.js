@@ -1,6 +1,6 @@
 // Assignment code here
 
-// Define alphabet (Upper and Lower case)
+// Lowercase Letters Array
 var alphabetLow = [
   "a",
   "b",
@@ -30,6 +30,7 @@ var alphabetLow = [
   "z",
 ];
 
+// Uppercase Letters Array
 var alphabetUpper = [
   "A",
   "B",
@@ -59,7 +60,7 @@ var alphabetUpper = [
   "Z",
 ];
 
-// Define special characters
+// Special Characters Array
 var specialCharacters = [
   "\u0020",
   "\u0021",
@@ -97,7 +98,7 @@ var specialCharacters = [
   "\u007E",
 ];
 
-// Define numerals
+// Number Array
 var numerals = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 // Define ALL characters
@@ -107,9 +108,7 @@ var allCharacters = alphabetUpper.concat(
   specialCharacters
 );
 
-let userInputIsValid = false;
-
-//Generate Button Function
+//Start of Generate Button Function
 function generatePassword() {
   //Set Password Length and prompt
   var setPasswordLength = prompt(
@@ -121,7 +120,7 @@ function generatePassword() {
 
   console.log(lengthAsNumber);
 
-  //Create conditional statement for password length
+  //Create conditional statement for Password Length
   if (lengthAsNumber >= 8 && lengthAsNumber <= 128) {
     confirm("You have selected a character length of " + lengthAsNumber + ".");
   } else if (lengthAsNumber <= 8 || lengthAsNumber >= 128) {
@@ -148,10 +147,7 @@ function generatePassword() {
   // Create a final password empty array
   var finalPassword = [];
 
-  //Create if statements to ensure the selected types are of the values: lowercase, uppercase, numeric and/or special characters
-  //Create for loops to generate random password
-
-  //Lowercase For Loop
+  //Lowercase "For" Loop
   if (characterType.toLowerCase() === "lowercase") {
     for (i = 0; i < setPasswordLength; i++) {
       finalPassword.push(
@@ -165,7 +161,7 @@ function generatePassword() {
     );
     return finalPassword.join("");
 
-    // Uppercase For Loop
+    // Uppercase "For" Loop
   } else if (characterType.toLowerCase() === "uppercase") {
     for (i = 0; i < setPasswordLength; i++) {
       finalPassword.push(
@@ -178,7 +174,7 @@ function generatePassword() {
     );
     return finalPassword.join("");
 
-    // Numbers For Loop
+    // Numbers "For" Loop
   } else if (characterType.toLowerCase() === "numbers") {
     for (i = 0; i < setPasswordLength; i++) {
       finalPassword.push(numerals[Math.floor(Math.random() * numerals.length)]);
@@ -189,7 +185,7 @@ function generatePassword() {
     );
     return finalPassword.join("");
 
-    // Special Characters For Loop
+    // Special Characters "For" Loop
   } else if (characterType.toLowerCase() === "special") {
     for (i = 0; i < setPasswordLength; i++) {
       finalPassword.push(
@@ -202,7 +198,7 @@ function generatePassword() {
     );
     return finalPassword.join("");
 
-    //All Characters For Loop
+    //All Characters "For" Loop
   } else if (characterType.toLowerCase() === "all") {
     var allCharacters = alphabetUpper.concat(
       alphabetLow,
@@ -222,7 +218,7 @@ function generatePassword() {
   } else {
     alert("You did not choose a valid option");
   }
-} //End of generateButton Function
+}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
